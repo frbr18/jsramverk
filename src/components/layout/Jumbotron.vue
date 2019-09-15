@@ -2,7 +2,6 @@
   <div class="jumbotron">
     <div class="container-fluid text-center">
       <h1>JSRAMVERK</h1>
-      <p>Välkommen till min redovisa sida.</p>
       <img src="../../assets/logo.png" alt="Image" />
     </div>
   </div>

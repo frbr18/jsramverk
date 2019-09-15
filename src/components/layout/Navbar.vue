@@ -16,6 +16,19 @@
           <li>
             <router-link class="link" to="/about">Om</router-link>
           </li>
+          <li></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <router-link class="link" to="/register">
+              <span class="glyphicon glyphicon-user"></span> Registrera
+            </router-link>
+          </li>
+          <li>
+            <router-link class="link" to="/register">
+              <span class="glyphicon glyphicon-log-in"></span> Logga in
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>

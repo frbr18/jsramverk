@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Reports from './components/Reports/Reports'
 import Week from './components/Reports/Week'
+import Register from './components/Users/Register'
 
 Vue.use(Router)
 
@@ -29,6 +30,10 @@ export default new Router({
       name: 'reports',
       component: Reports
     },
-
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
   ]
 })

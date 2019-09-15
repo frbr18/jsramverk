@@ -14,6 +14,6 @@ export default {
 div {
   background-color: #f2f2f2;
   padding: 25px;
-  bottom: 0;
+  margin-top: 20px;
 }
 </style>
