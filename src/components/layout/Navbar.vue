@@ -19,14 +19,17 @@
           <li></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
+          <li v-show="!isUserLoggedIn">
             <router-link class="link" to="/register">
               <span class="glyphicon glyphicon-user"></span> Registrera
             </router-link>
           </li>
           <li>
-            <router-link class="link" to="/register">
+            <router-link v-show="!isUserLoggedIn" class="link" to="/login">
               <span class="glyphicon glyphicon-log-in"></span> Logga in
+            </router-link>
+            <router-link v-on:click.native="logOut" v-show="isUserLoggedIn" class="link" to="/">
+              <span class="glyphicon glyphicon-log-in"></span> Logga Ut
             </router-link>
           </li>
         </ul>
@@ -36,9 +39,19 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "navbar",
-  components: {}
+  computed: {
+    isUserLoggedIn() {
+      return this.$store.state.user.token;
+    }
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch("cleanUser");
+    }
+  }
 };
 </script>
 

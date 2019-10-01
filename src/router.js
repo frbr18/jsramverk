@@ -3,8 +3,11 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Reports from './components/Reports/Reports'
-import Week from './components/Reports/Week'
+import CreateReport from './components/Reports/Create-report'
+import EditReport from './components/Reports/Edit-report'
+import Report from './components/Reports/Report'
 import Register from './components/Users/Register'
+import Login from './components/Users/Login'
 
 Vue.use(Router)
 
@@ -21,9 +24,9 @@ export default new Router({
       component: About
     },
     {
-      path: '/report/week/:id',
-      name: 'week',
-      component: Week
+      path: '/report/report/:id',
+      name: 'report',
+      component: Report
     },
     {
       path: '/report',
@@ -31,9 +34,24 @@ export default new Router({
       component: Reports
     },
     {
+      path: '/report/create',
+      name: 'create-report',
+      component: CreateReport
+    },
+    {
+      path: '/report/edit/:id',
+      name: 'edit-report',
+      component: EditReport
+    },
+    {
       path: '/register',
       name: 'register',
       component: Register
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    }
   ]
 })

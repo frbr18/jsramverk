@@ -1,16 +1,39 @@
 <template>
   <div class="container-fluid text-center">
+    <router-link v-show="isUserLoggedIn" to="/report/create" class="btn btn-primary">Skapa ny post</router-link>
     <h3>Veckorapporter</h3>
-    <router-link to="/report/week/1">Week 1</router-link>
+    <h3 v-for="report in reports" v-bind:key="report._id">
+      <router-link :to="{name: 'report', params:{id: report._id}}">{{ report.title }}</router-link>
+    </h3>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "reports",
   components: {},
   data() {
-    return {};
+    return {
+      idtest: 1,
+      reports: []
+    };
+  },
+  computed: {
+    isUserLoggedIn() {
+      return this.$store.state.user.token;
+    }
+  },
+  methods: {
+    getReports: function() {
+      axios
+        .get(this.$store.state.baseURL + "/reports")
+        .then(res => (this.reports = res.data.data))
+        .catch(err => console.log(err));
+    }
+  },
+  created() {
+    this.getReports();
   }
 };
 </script>

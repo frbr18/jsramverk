@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: "register",
   components: {},
@@ -73,9 +74,9 @@ export default {
       rePassword: "",
       gdpr: "",
       date: {
-        year: "",
-        month: "",
-        day: ""
+        year: "1990",
+        month: "09",
+        day: "27"
       },
       months: {
         "Januari": 31,
@@ -94,10 +95,12 @@ export default {
     }
   },
   methods: {
-    checkForm: function(e) {
+    checkForm: function() {
+      //axios.get('http://localhost:1338/user/register').then(res => console.log(res)); 
 
       this.errors = [];
-
+      const date = this.date.year + "-" + this.months[this.date.month] + "-" + this.date.day;
+      console.log(date);
       if (!this.name) {
         this.errors.push("Fyll i ett namn.");
       }
@@ -123,7 +126,14 @@ export default {
         this.errors.push("Skriv in ditt födelsedatum");
       }
       if(!this.errors.length) {
+        axios.post(this.$store.state.baseURL +'/user/register', {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          date: date
+        }).then(res => console.log(res.data));
         this.errors.push("Registration complete!");
+        this.$router.push('/');
       }
     },
     validEmail: function(email) {
