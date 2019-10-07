@@ -1,4 +1,7 @@
 before_install:
-  - npm install
+  - npm install -g forever
 script:
+  - forever start -c 'npm run serve' ./
   - npm run test
+after_script:
+  - forever stopall
