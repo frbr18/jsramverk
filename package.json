@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "test": "mocha test/**/*.js",
+    "test": "PORT=8081 npm start & mocha --timeout 10000 test/**/*.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && rsync -av dist/* deploy@134.209.25.176:/var/www/me-client.frbr18-jsramverk.me/html/"
