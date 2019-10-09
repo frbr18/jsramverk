@@ -16,6 +16,9 @@
           <li>
             <router-link class="link" to="/about">Om</router-link>
           </li>
+          <li>
+            <router-link class="link" to="/chat">Chatt</router-link>
+          </li>
           <li></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -39,7 +42,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   name: "navbar",
   computed: {

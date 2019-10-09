@@ -8,6 +8,7 @@ import EditReport from './components/Reports/Edit-report'
 import Report from './components/Reports/Report'
 import Register from './components/Users/Register'
 import Login from './components/Users/Login'
+import Chat from './components/Chat/Chat';
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/report',
       name: 'reports',
       component: Reports
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat
     },
     {
       path: '/report/create',
