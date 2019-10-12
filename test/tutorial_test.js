@@ -30,19 +30,16 @@ test.describe("ME-Client", function () {
         done();
     });
 
-    test.it("test go to week 2", function (done) {
-        goToNavLink("Rapporter");
-        goToNavLink("Week 2");
+    test.it("test go to register", function (done) {
+        goToNavLink("Registrera");
         done();
     });
-    test.it("test go to week 3", function (done) {
-        goToNavLink("Rapporter");
-        goToNavLink("Week 3");
+    test.it("test go to login", function (done) {
+        goToNavLink("Logga in");
         done();
     });
-    test.it("test go to week 1", function (done) {
+    test.it("test go to rapports", function (done) {
         goToNavLink("Rapporter");
-        goToNavLink("Week 1");
         done();
     });
 });
