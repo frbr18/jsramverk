@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",
-    "test": "PORT=8081 npm start & mocha --timeout 10000 test/**/*.js",
+    "test": "PORT=8081 npm start & nyc --reporter=html --reporter=text --reporter=clover mocha --timeout 10000 test/**/*.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "npm run build && rsync -av dist/* deploy@134.209.25.176:/var/www/me-client.frbr18-jsramverk.me/html/"
@@ -26,9 +26,10 @@
     "@vue/cli-service": "^3.11.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
-    "selenium-webdriver": "^3.6.0",
     "eslint-plugin-vue": "^5.2.3",
     "mocha": "^6.2.1",
+    "nyc": "^14.1.1",
+    "selenium-webdriver": "^3.6.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
