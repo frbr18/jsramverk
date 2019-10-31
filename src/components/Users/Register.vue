@@ -100,7 +100,6 @@ export default {
 
       this.errors = [];
       const date = this.date.year + "-" + this.months[this.date.month] + "-" + this.date.day;
-      console.log(date);
       if (!this.name) {
         this.errors.push("Fyll i ett namn.");
       }

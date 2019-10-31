@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         baseURL: "https://me-api.frbr18-jsramverk.me",
+        baseURLmongo: "https://me-socket.frbr18-jsramverk.me",
         user: {}
     },
 

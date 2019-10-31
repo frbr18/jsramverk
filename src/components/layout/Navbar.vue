@@ -32,7 +32,7 @@
               <span class="glyphicon glyphicon-log-in"></span> Logga in
             </router-link>
             <router-link v-on:click.native="logOut" v-show="isUserLoggedIn" class="link" to="/">
-              <span class="glyphicon glyphicon-log-in"></span> Logga Ut
+              <span class="glyphicon glyphicon-log-out"></span> Logga Ut
             </router-link>
           </li>
         </ul>
